@@ -9,15 +9,29 @@ const input=document.querySelector("input")
 const button=document.querySelector("button")
 
 
-let  arrayUsed=[]
-fetch("https://api.openweathermap.org/data/2.5/weather?q=")
+let inputValue =""
+
+let apiLink=`https://api.openweathermap.org/data/2.5/weather?q={inputValue}&appid=a17bc3f5ae92ad5fdbaad666100b6f23`
+
+button.onclick=(e)=>{
+
+inputValue= input.value.toString()
+
+}
+
+
+fetch(apiLink)
 
 .then((resp)=>resp.json())
 .then((data)=>{
 
     arrayUsed=data
-    showScreen(data.wheather)
+    showScreen(data)
 })
 console.log(fetch);
 
-let inputValue=
+function showScreen(a){
+
+
+
+}
